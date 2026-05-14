@@ -1,73 +1,54 @@
-# React + TypeScript + Vite
+# SortLabs
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SortLabs is an interactive, multi-section web platform designed to help you visualize, learn, and benchmark sorting algorithms. Built with React, TypeScript, and Vite, it offers an advanced educational experience far beyond simple animations.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### 🧠 Learn Section
+Watch sorting algorithms in real-time step-by-step. The built-in **Advisor System** analyzes the active algorithm and dynamically explains comparisons, swaps, and overall behavior in a chat-like interface. You can easily toggle between "Learning Mode" (detailed explanations) and "Simple Mode" (milestone highlights only) to control the flow of information.
 
-## React Compiler
+### 📊 Compare Section
+Pit up to four algorithms against each other at the same time! SortLabs will generate an identical data set across multiple visualizers and concurrently execute them. Watch the real-time **Metrics Panels** to track live comparisons and array writes/swaps, and learn exactly why an $O(n \log n)$ algorithm crushes an $O(n^2)$ algorithm.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 💻 Code Viewer
+Dive into the underlying implementation. The Code Viewer presents the precise TypeScript logic and language-agnostic pseudocode used to build SortLabs. You can also view comprehensive **Time & Space Complexity** profiles and ask the Advisor to break down the algorithm line-by-line.
 
-## Expanding the ESLint configuration
+## Supported Algorithms
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. **Bubble Sort** — $O(n^2)$
+2. **Selection Sort** — $O(n^2)$
+3. **Insertion Sort** — $O(n^2)$
+4. **Merge Sort** — $O(n \log n)$
+5. **Quick Sort** — $O(n \log n)$
+6. **Heap Sort** — $O(n \log n)$
+7. **Counting Sort** — $O(n+k)$ *(Non-Comparison)*
+8. **Radix Sort** — $O(nk)$ *(Non-Comparison)*
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **React** (Component Architecture)
+- **TypeScript** (Strict Type Checking)
+- **Tailwind CSS** (Utility-first "Developer OS" Neon Aesthetic)
+- **Vite** (Build Tool & Dev Server)
+- **Zustand** (State Management for the Advisor Engine)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Running Locally
+
+To run the project on your local machine:
+
+```bash
+# Clone the repository
+git clone https://github.com/RandomGuy89318/SortLabs.git
+cd SortLabs
+
+# Install dependencies
+npm install
+
+# Start the Vite development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Visit `http://localhost:5173` (or the port specified by Vite) to view the app!
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## License
+Distributed under the MIT License. See `LICENSE` for more information.
